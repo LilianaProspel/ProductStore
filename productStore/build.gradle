@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+group = 'com.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Serenity BDD
+    testImplementation 'net.serenity-bdd:serenity-core:4.1.20'
+    testImplementation 'net.serenity-bdd:serenity-junit:4.1.20'
+    testImplementation 'net.serenity-bdd:serenity-screenplay:4.1.20'
+    testImplementation 'net.serenity-bdd:serenity-cucumber:4.1.20'
+    testImplementation 'net.serenity-bdd:serenity-screenplay-webdriver:4.1.20'
+
+    testImplementation 'io.cucumber:cucumber-java:6.10.4'
+    testImplementation 'io.cucumber:cucumber-core:6.10.4'
+    testImplementation 'io.cucumber:cucumber-junit:6.10.4'
+
+    /// WebDriver setup
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.22.0'
+    testImplementation 'org.seleniumhq.selenium:selenium-chrome-driver:4.22.0'
+
+    // Logging
+    testImplementation 'org.slf4j:slf4j-simple:2.0.7'
+
+    // Test dependencies
+    testImplementation 'org.assertj:assertj-core:3.24.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    testImplementation "org.junit.platform:junit-platform-suite:1.10.2"
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
